@@ -4,11 +4,13 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= render 'shared/error_messages' %>
       
-      <%= f.label :company_id %>
-      <%= f.text_field :company_id %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      
+      <%= f.label :company_id %> <span style="font-size:0.7em; color:gray; text-transform: uppercase;"> please fill in with the company id</span>
+      <%= f.text_field :company_id, class: 'form-control' %>
     
       <%= f.submit "Sign up", class: "btn btn-primary" %>
     <% end %>
